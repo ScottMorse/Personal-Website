@@ -1,0 +1,377 @@
+
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url(Fonts/SourceSansPro-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Source Sans Pro Light';
+    src: url(Fonts/SourceSansPro-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Source Sans Pro Bold';
+    src: url(Fonts/SourceSansPro-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'MPLUS Rounded';
+    src: url(Fonts/MPLUSRounded1c-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'MPLUS Rounded Light';
+    src: url(Fonts/MPLUSRounded1c-Light.ttf);
+}
+
+@font-face {
+    font-family: 'MPLUS Rounded Bold';
+    src: url(Fonts/MPLUSRounded1c-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url(Fonts/RobotoCondensed-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto Condensed Light';
+    src: url(Fonts/RobotoCondensed-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto Condensed Bold';
+    src: url(Fonts/RobotoCondensed-Bold.ttf);
+}
+
+/* MOBILE / CONSTANT */
+:root {
+    --desktop-only: none;
+
+    --purple: rgb(112, 32, 143);
+    --light-purple: rgb(238, 194, 225);
+    --gold: rgb(255, 246, 149);
+    --light-teal: rgb(188, 237, 252);
+    --light-grey-blue: rgb(212, 243, 250);
+    --white: rgb(252, 251, 251);
+    --grey: rgb(107, 107, 125);
+    --light-grey: rgb(223, 223, 237);
+    --dark-grey: rgb(54, 54, 62);
+    --red: rgb(237, 108, 108);
+
+    --dark-blue: rgb(63, 139, 171);
+    --med-blue: rgb(79, 178, 220);
+    --light-blue: rgb(92, 201, 247);
+
+    --font1: 'Source Sans Pro';
+    --font1-light: 'Source Sans Pro Light';
+    --font1-bold: 'Source Sans Pro Bold';
+    --font2: 'MPLUS Rounded';
+    --font2-light: 'MPLUS Rounded Light';
+    --font2-bold: 'MPLUS Rounded Bold';
+    --font3: 'Roboto Condensed';
+    --font3-light: 'Roboto Condensed Light';
+    --font3-bold: 'Roboto Condensed Bold';
+
+    --main-logo-w: 75vw;
+    --h1-font-size: 4em;
+    --h1-align: center;
+    --h1-marg: 5vw 0 12vw 0;
+    --corner-pos: 101vw;
+    --nav-pos: translate(0vw,28vw);
+
+    --teaser-h: 85vw;
+    --h2-font-size: 3em;
+    --mid-p-marg: 3vw 5vw 5vw 5vw;
+    --mid-p-size: 2em;
+    --main-img-w: 15vw;
+    --read-more-size: 2.5em;
+}
+
+/* DESKTOP */
+@media (min-width: 780px){
+    :root {
+        --desktop-only: flex;
+
+        --main-logo-w: 45vw;
+        --h1-font-size: 2.3em;
+        --h1-align: unset;
+        --h1-marg: 5vw 5vw 0 0;
+        --corner-pos: 46vw;
+        --nav-pos: translate(-4vw,37.5vw);
+
+        --teaser-h: 60vw;
+        --h2-font-size: 2em;
+        --mid-p-size: 1.5em;
+        --main-img-w: 9vw;
+        --mid-p-marg: 3vw 10vw 2vw 10vw;
+        --read-more-size: 1.5em;
+    }
+}
+
+
+html {
+    line-height: 1;
+    font-size: 2.5vw;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    color: var(--dark-grey);
+    align-items: center;
+}
+
+/* ##################################### HEADING SECTION ###################################### */
+#pics {
+    position: absolute;
+    display: var(--desktop-only);
+    transform: translate(-26vw,26vw);
+    margin: 0;
+}
+
+.main-img {
+    height: var(--main-img-w);
+    width: var(--main-img-w);
+    background-size: cover;
+    background-position: bottom;
+    border-radius: 20%;
+    opacity: 0;
+    transition: opacity 1s ease;
+    border: 5px solid var(--light-teal);
+    filter: brightness(1.05) saturate(.9);
+}
+
+.main-img.load {
+    opacity: .7;
+}
+
+#dev-img {
+    background-image: url(imgs/dev.jpg);
+}
+
+#code-img {
+    background-image: url(imgs/code.jpg);
+    margin-left: 2vw;
+}
+
+#mus-img {
+    background-image: url(imgs/guitar.jpeg);
+    background-size: 300%;
+    background-position: 10% 100%;
+    margin-left: 2vw;
+}
+
+.p-link {
+    text-decoration: none;
+    color: var(--red);
+}
+
+
+#heading {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    justify-self: center;
+    padding-bottom: 3vw;
+    user-select: none;
+    background-image: url(imgs/code-background-invert.jpg);
+    background-size: cover;
+    width: 100vw;
+}
+
+h1 {
+    font-size: var(--h1-font-size);
+    font-family: var(--font1-light);
+    display: flex;
+    flex-direction: column;
+    align-items: var(--h1-align);
+    margin: var(--h1-marg);
+    text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+    align-self: flex-end;
+}
+
+.stacker {
+    margin: 0;
+    transform: translateY(-20%);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.stacker.load {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#web {
+    color: var(--dark-blue);
+}
+
+#python {
+    color: var(--med-blue);
+}
+
+#jazz {
+   color: var(--light-blue);
+}
+
+#simple-nav {
+    position: absolute;
+    transform: var(--nav-pos);
+    font-family: var(--font1-light);
+    font-size: 0.6em;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+    color: var(--dark-blue);
+    border-top: 2px solid var(--dark-blue);
+    padding: 0.7vw 0 1.2vw 0;
+    border-bottom: 2px solid var(--dark-blue);
+}
+
+#simple-nav.load {
+    opacity: 1;
+}
+
+.curly {
+    font-family: var(--font2-light);
+}
+
+.nav-link {
+    text-decoration: none;
+    margin-right: 0.5vw;
+    margin-left: 0.5vw;
+    color: inherit;
+    transition: color .2s ease;
+}
+
+.nav-link:hover {
+    color: var(--red);
+}
+
+#main-logo {
+    height: var(--main-logo-w);
+    width: var(--main-logo-w);
+    margin-left: -5vw;
+    margin: .5vw 2.5vw 4vw -2.5vw;
+}
+
+#borderer {
+    position: absolute;
+    height: calc(var(--main-logo-w) - 5vw);
+    width: calc(var(--main-logo-w) - 5vw);
+    border-top: 10px solid var(--gold);
+    border-bottom: 10px solid var(--gold);
+    border-radius: 50%;
+    transform: rotate(-35deg) translate(5vw,4vw);
+    opacity: .5;
+    filter: blur(5px);
+}
+
+#logo-img1 {
+    width: 100%;
+    height: 100%;
+    background-image: url(imgs/Logo2-trans.png);
+    background-size: cover;
+    background-position: 20%;
+    overflow: hidden;
+    z-index: 1;
+    transform: scale(.8);
+    transition: transform 1s cubic-bezier(0, 1.5, 0.58, 1), opacity 2s ease;
+    opacity: 0;
+}
+
+#logo-img1.load {
+    transform: scale(1);
+    opacity: 1;
+}
+
+#logo-svg1 {
+    position: absolute;
+    width: var(--main-logo-w);
+    height: var(--main-logo-w);
+    z-index: 0;
+    filter: blur(30px);
+}
+
+#circle1 {
+    fill: var(--light-teal);
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+#circle1.load {
+    opacity: 1;
+}
+
+/* ################################# TEASER SECTION ##################################### */
+
+#teaser{
+    background-color: var(--light-grey);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: var(--teaser-h);
+}
+
+#teaser-background {
+    position: absolute;
+    height: var(--teaser-h);
+    width: 100vw;
+    background-image: url(imgs/music-background.jpg);
+    background-size: cover;
+    overflow: hidden;
+    opacity: 0.02;
+    z-index: 0;
+}
+
+h2 {
+    font-family: var(--font3);
+    font-size: var(--h2-font-size);
+    text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+    margin: 8vw 0 0 0;
+    z-index: 1;
+}
+
+.teaser-header {
+    margin: 0;
+    text-align: center;
+}
+
+#background {
+    margin-top: -0.7vw;
+}
+
+#teaser-p {
+    font-family: var(--font3);
+    font-size: var(--mid-p-size);
+    text-align: center;
+    margin: var(--mid-p-marg);
+    z-index: 1;
+}
+
+#read-more {
+    text-decoration: none;
+    margin: 4vw;
+    padding: 3vw;
+    background: var(--white);
+    font-family: var(--font3);
+    font-size: var(--read-more-size);
+    color: var(--dark-grey);
+    transition: background .4s ease, color .4s ease;
+    letter-spacing: -1px;
+    z-index: 1;
+}
+
+#read-more:hover {
+    color: var(--white);
+    background: var(--grey);
+}
