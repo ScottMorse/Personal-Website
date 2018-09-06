@@ -74,6 +74,7 @@
     --font3-bold: 'Roboto Condensed Bold';
 
     --main-logo-w: 75vw;
+    --logo-marg: .5vw 2.5vw 0 -2.5vw;
     --h1-font-size: 4em;
     --h1-align: center;
     --h1-marg: 5vw 0 12vw 0;
@@ -94,11 +95,13 @@
         --desktop-only: flex;
 
         --main-logo-w: 45vw;
+        --logo-marg: .5vw 2.5vw 4vw -2.5vw;
         --h1-font-size: 2.3em;
         --h1-align: unset;
-        --h1-marg: 5vw 5vw 0 0;
+        --h1-marg: 10vw 5vw 0 0;
         --corner-pos: 46vw;
-        --nav-pos: translate(-4vw,37.5vw);
+        --nav-pos: translate(48vw,31vw);
+        
 
         --teaser-h: 60vw;
         --h2-font-size: 2em;
@@ -129,7 +132,7 @@ body {
 #pics {
     position: absolute;
     display: var(--desktop-only);
-    transform: translate(-26vw,26vw);
+    transform: translate(-26vw,31vw);
     margin: 0;
 }
 
@@ -229,9 +232,9 @@ h1 {
     opacity: 0;
     transition: transform 1s ease, opacity 1s ease;
     color: var(--dark-blue);
-    border-top: 2px solid var(--dark-blue);
+    border-top: 1.5px solid var(--med-blue);
     padding: 0.7vw 0 1.2vw 0;
-    border-bottom: 2px solid var(--dark-blue);
+    border-bottom: 1.5px solid var(--med-blue);
 }
 
 #simple-nav.load {
@@ -258,7 +261,7 @@ h1 {
     height: var(--main-logo-w);
     width: var(--main-logo-w);
     margin-left: -5vw;
-    margin: .5vw 2.5vw 4vw -2.5vw;
+    margin: var(--logo-marg);
 }
 
 #borderer {
