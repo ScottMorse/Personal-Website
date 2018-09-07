@@ -603,10 +603,10 @@ h3 {
 #footer {
     background-color: var(--light-grey);
     color: var(--grey);
-    height: 10vw;
+    height: 15vw;
     padding-bottom: 10vw;
     width: 100vw;
-    font-size: 1.5em;
+    font-size: 0.8em;
     display: flex;
     justify-content: center;
     align-items: center;
